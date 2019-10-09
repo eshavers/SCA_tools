@@ -45,8 +45,10 @@ for i in range(n):
     for j in range(n):
         simlty[i,j]= cosTheta(vectrs[:,i],vectrs[:,j])
 dissSimlty=abs(1-simlty)
+mean_der1= np.mean(deriv1)
+mean_der2= np.mean(deriv2)
 ######
-
+plt.plot(xCnt, vectrs[:,0]) #this is for visualization, the vectrs column is the vector we want to visulise
 with open("2ndD_dissSimMatrix.txt", 'w') as yal:
     np.savetxt(yal, dissSimlty, fmt='%f')  
 yal.close()
